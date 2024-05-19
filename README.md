@@ -24,7 +24,7 @@ Você pode instalar todas as dependências usando o arquivo `requirements.txt` c
 
 ```sh
 pip install -r requirements.txt
-
+``
 # Obtendo a Chave de API do YouTube
 
 Para utilizar a API do YouTube, é necessário obter uma chave de API. Siga os passos abaixo:
@@ -35,28 +35,28 @@ Para utilizar a API do YouTube, é necessário obter uma chave de API. Siga os p
 4. Vá para a seção "Credenciais" e crie uma nova credencial do tipo "Chave de API".
 5. Copie a chave de API gerada e mantenha-a segura.
 
-# Estrutura do Projeto
+## Estrutura do Projeto
 
-## Arquivos
+### Arquivos
 
-### teste_eng_de_dados.py
+#### `teste_eng_de_dados.py`
 
 Este é o script Python principal do projeto. Ele acessa a API do YouTube para extrair informações de um canal específico e de seus vídeos. As funcionalidades do script incluem:
 
-1. **Acesso à API do YouTube:** Utiliza a biblioteca `google-api-python-client` para acessar a API do YouTube.
-2. **Extração de Informações do Canal:** Obtém informações como ID do canal, título, descrição, número de visualizações, número de inscritos e número de vídeos do canal.
-3. **Extração de Informações dos Vídeos:** Obtém informações sobre os 10 vídeos mais recentes do canal, incluindo ID, título, duração, número de visualizações, número de curtidas, número de favoritos e número de comentários.
-4. **Exportação de Dados:** Exporta as informações do canal e dos vídeos para arquivos CSV.
+- **Acesso à API do YouTube:** Utiliza a biblioteca `google-api-python-client` para acessar a API do YouTube.
+- **Extração de Informações do Canal:** Obtém informações como ID do canal, título, descrição, número de visualizações, número de inscritos e número de vídeos do canal.
+- **Extração de Informações dos Vídeos:** Obtém informações sobre os 10 vídeos mais recentes do canal, incluindo ID, título, duração, número de visualizações, número de curtidas, número de favoritos e número de comentários.
+- **Exportação de Dados:** Exporta as informações do canal e dos vídeos para arquivos CSV.
 
-### calculo_kpi.sql
+#### `calculo_kpi.sql`
 
 Este é um script SQL que realiza o cálculo de KPIs (Indicadores Chave de Desempenho) com base na modelagem dimensional proposta. As consultas SQL incluem:
 
-1. **Total de Vendas por Categoria de Produto:** Calcula o total de vendas por categoria de produto, incluindo a porcentagem de vendas de cada categoria em relação ao total.
-2. **Número de Pedidos e Clientes por Estado:** Calcula o número total de pedidos e clientes por estado.
-3. **Média de Valor do Pedido por Mês:** Calcula a média do valor do pedido por mês, bem como a média acumulada ao longo do tempo.
+- **Total de Vendas por Categoria de Produto:** Calcula o total de vendas por categoria de produto, incluindo a porcentagem de vendas de cada categoria em relação ao total.
+- **Número de Pedidos e Clientes por Estado:** Calcula o número total de pedidos e clientes por estado.
+- **Média de Valor do Pedido por Mês:** Calcula a média do valor do pedido por mês, bem como a média acumulada ao longo do tempo.
 
-### modelo_dimensional.drawio.png
+#### `modelo_dimensional.drawio.png`
 
 Este é um diagrama que representa a modelagem dimensional proposta para o projeto. Ele inclui as seguintes tabelas:
 
@@ -65,14 +65,14 @@ Este é um diagrama que representa a modelagem dimensional proposta para o proje
 - OrderFact
 - CustomerDimension
 
-### combined_info.csv
+#### `combined_info.csv`
 
 Este é um arquivo CSV gerado a partir da combinação das informações do canal e dos vídeos. Ele contém todos os dados extraídos e processados pelo script `teste_eng_de_dados.py`.
 
-# Airflow
+## Airflow
 
 Para automatizar o processo de extração de dados do YouTube e processamento, este projeto também inclui um script DAG para Airflow, uma plataforma de orquestração de fluxo de trabalho.
 
-## youtube_data_dag.py
+### `youtube_data_dag.py`
 
 Este é o script DAG do Airflow que executa o processo de extração de dados do YouTube diariamente às 01:30 AM. Ele chama a função principal do script `teste_eng_de_dados.py` para realizar a extração e o processamento dos dados.
