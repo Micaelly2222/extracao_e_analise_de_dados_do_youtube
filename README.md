@@ -24,7 +24,8 @@ Você pode instalar todas as dependências usando o arquivo `requirements.txt` c
 
 ```sh
 pip install -r requirements.txt
-``
+```
+
 # Obtendo a Chave de API do YouTube
 
 Para utilizar a API do YouTube, é necessário obter uma chave de API. Siga os passos abaixo:
