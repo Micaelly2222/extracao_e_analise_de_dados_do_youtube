@@ -1,0 +1,4 @@
+google-api-python-client==2.33.0
+loguru==0.5.3
+tabulate==0.8.9
+pandas==1.0.3
